@@ -30,12 +30,10 @@ async def start(c, m):
     msg = m.message if getattr(m, "data", None) else await m.reply("**Processing....⌛**", quote=True)
     try:
         buttons = [
-            [InlineKeyboardButton('Owner 🧑', url='https://t.me/Ns_AnoNymous'),
+            [InlineKeyboardButton('Owner 🧑', url='https://t.me/axa_bachha'),
              InlineKeyboardButton('About 📕', callback_data='about')],
             [InlineKeyboardButton('Help 💡', callback_data='help'),
-             InlineKeyboardButton('Settings ⚙', callback_data='settings')],
-            [InlineKeyboardButton('Open Source Repository 🌐', url='https://github.com/Ns-AnoNymouS/jiosaavn')],
-            [InlineKeyboardButton('Close ❌', callback_data='close')]
+             InlineKeyboardButton('Settings ⚙', callback_data='settings')]
         ]
         await msg.edit(
             text=TEXT.START_MSG.format(mention=mention),
@@ -113,8 +111,7 @@ async def about(client: Bot, message: Message | CallbackQuery):
         buttons = [
             [InlineKeyboardButton('Help 💡', callback_data='help'),
              InlineKeyboardButton('Settings ⚙', callback_data='settings')],
-            [InlineKeyboardButton('Home 🏕', callback_data='home'),
-             InlineKeyboardButton('Close ❌', callback_data='close')]
+            [InlineKeyboardButton('Home 🏕', callback_data='home')]
         ]        
         if isinstance(message, Message):
             await msg.edit(
